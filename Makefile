@@ -19,7 +19,7 @@ all: build
 .PHONY: build
 build: | $(ENV)/COMPLETE
 $(ENV)/COMPLETE: requirements.txt
-	$(VIRTUALENV) --no-site-packages $(ENV)
+	$(VIRTUALENV) --system-site-packages $(ENV)
 	$(INSTALL) -r requirements.txt
 	$(ENV)/bin/python ./setup.py develop
 	touch $(ENV)/COMPLETE
